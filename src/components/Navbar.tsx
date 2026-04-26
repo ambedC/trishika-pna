@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -34,8 +35,8 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        <Link href="/" className="text-3xl font-serif text-brand-gold font-light tracking-[0.1em] uppercase">
-          PNA Associates
+        <Link href="/" className="flex items-center gap-2">
+          <Image src="/logo.png" alt="PNA Associates Logo" width={60} height={60} className="object-contain" />
         </Link>
 
         {/* Desktop Nav */}

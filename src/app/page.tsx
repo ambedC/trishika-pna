@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <HeroSection 
-        title="Elegance begins the moment you enter Trishika."
+        title="Elegance begins the moment you enter."
         subtitle="Leave with confidence, wrapped in calm."
         ctaText="Explore Trishika"
         ctaLink="/trishika"

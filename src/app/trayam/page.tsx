@@ -1,5 +1,16 @@
+import { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
 import SectionWrapper from "@/components/SectionWrapper";
+
+export const metadata: Metadata = {
+  title: "Trayam Wellness Spa",
+  description: "Your serene escape within the luxurious Saj Earth Resort. Discover a world of calm with our exclusive therapies.",
+  openGraph: {
+    title: "Trayam Wellness Spa",
+    description: "Your serene escape within the luxurious Saj Earth Resort. Discover a world of calm with our exclusive therapies.",
+    images: ["/images/trayam.jpg"],
+  },
+};
 import ServiceCard from "@/components/ServiceCard";
 import CTAButton from "@/components/CTAButton";
 
@@ -21,6 +32,7 @@ export default function TrayamPage() {
         title="Trayam Wellness Spa"
         subtitle="Your serene escape within the luxurious Saj Earth Resort."
         backgroundImage="/images/trayam.jpg"
+        logoSrc="/trayam/logo.png"
       />
 
       <SectionWrapper id="about" className="text-center max-w-4xl">

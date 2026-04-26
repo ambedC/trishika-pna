@@ -16,8 +16,33 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "PNA Associates | Premium Spa & Wellness",
+  metadataBase: new URL("https://pnaassociates.com"),
+  title: {
+    default: "PNA Associates | Premium Spa & Wellness",
+    template: "%s | PNA Associates"
+  },
   description: "Trishika Saloon & Wellness Spa and Trayam Wellness Spa. Premium wellness spa offering massage therapies, body treatments, and relaxation experiences.",
+  keywords: ["Spa", "Wellness", "Massage Therapy", "Body Treatments", "PNA Associates", "Trishika", "Trayam"],
+  icons: {
+    icon: "/trishika/logo.jpg",
+    apple: "/trishika/logo.jpg",
+  },
+  openGraph: {
+    title: "PNA Associates | Premium Spa & Wellness",
+    description: "Premium wellness spa offering massage therapies, body treatments, and relaxation experiences.",
+    url: "https://pnaassociates.com",
+    siteName: "PNA Associates",
+    images: [
+      {
+        url: "/images/hero-bg.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PNA Associates Spa",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

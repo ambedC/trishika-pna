@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import CTAButton from "./CTAButton";
 
 interface HeroSectionProps {
@@ -9,6 +10,7 @@ interface HeroSectionProps {
   ctaText?: string;
   ctaLink?: string;
   backgroundImage?: string;
+  logoSrc?: string;
   children?: React.ReactNode;
 }
 
@@ -18,6 +20,7 @@ export default function HeroSection({
   ctaText,
   ctaLink,
   backgroundImage = "/images/hero-bg.jpg",
+  logoSrc,
   children,
 }: HeroSectionProps) {
   return (
@@ -31,7 +34,7 @@ export default function HeroSection({
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center">
         {children ? (
           children
         ) : (
@@ -39,8 +42,19 @@ export default function HeroSection({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="space-y-8"
+            className="space-y-8 flex flex-col items-center"
           >
+            {logoSrc && (
+              <div className="mb-4">
+                <Image 
+                  src={logoSrc} 
+                  alt={title || "Logo"} 
+                  width={160} 
+                  height={160} 
+                  className="object-contain rounded-2xl shadow-lg shadow-black/20 p-2 bg-white/5 backdrop-blur-md border border-white/10" 
+                />
+              </div>
+            )}
             {title && (
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-light text-brand-gold leading-[1.1] tracking-wide">
                 {title}

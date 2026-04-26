@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
-import CTAButton from "./CTAButton";
 
 type ContactTarget = "Trishika" | "Trayam" | "PNA Associates";
 
@@ -36,114 +36,126 @@ export default function ContactSection() {
     window.open(`https://wa.me/${number}?text=${encodedText}`, "_blank");
   };
 
+  const inputStyles = "w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-brand-gold/50 focus:bg-white/10 transition-all font-light backdrop-blur-sm";
+  const labelStyles = "block text-xs tracking-[0.2em] uppercase text-brand-gold/80 mb-3 ml-1";
+
   return (
-    <SectionWrapper id="contact" className="bg-brand-surface border-t border-brand-blue-light/50 !py-24">
-      <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-serif font-light tracking-wide text-brand-gold mb-4">
-            Get in Touch
-          </h2>
-          <p className="text-gray-400 font-light text-lg">
-            Select a location or contact our main office directly.
-          </p>
-        </div>
-
+    <SectionWrapper id="contact" className="!pt-12 !pb-32">
+      <div className="max-w-4xl mx-auto">
+        
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10 p-2 bg-brand-bg rounded-2xl border border-brand-blue-light">
-          {(["Trishika", "Trayam", "PNA Associates"] as ContactTarget[]).map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`flex-1 min-w-[120px] px-6 py-3 rounded-xl text-sm font-medium tracking-widest uppercase transition-all duration-300 ${
-                activeTab === tab
-                  ? "bg-brand-gold text-brand-blue shadow-lg shadow-brand-gold/20"
-                  : "text-gray-400 hover:text-brand-gold hover:bg-brand-surface"
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
+        <div className="flex justify-center mb-12">
+          <div className="inline-flex flex-wrap justify-center gap-2 p-1.5 bg-white/5 backdrop-blur-md rounded-full border border-white/10">
+            {(["Trishika", "Trayam", "PNA Associates"] as ContactTarget[]).map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-8 py-3.5 rounded-full text-xs font-medium tracking-[0.15em] uppercase transition-all duration-500 ${
+                  activeTab === tab
+                    ? "bg-brand-gold text-brand-blue shadow-[0_0_20px_rgba(212,175,55,0.3)]"
+                    : "text-gray-400 hover:text-white hover:bg-white/5"
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Form */}
-        <motion.form 
+        {/* Form Container */}
+        <motion.div 
           key={activeTab}
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          onSubmit={handleSubmit}
-          className="space-y-6"
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="bg-brand-surface/40 backdrop-blur-xl border border-brand-blue-light/30 rounded-3xl p-8 md:p-14 shadow-2xl"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <label htmlFor="name" className="text-sm tracking-widest uppercase text-brand-gold-dark font-medium">Full Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
+          <div className="text-center mb-10">
+            <h3 className="text-2xl font-serif text-brand-gold tracking-widest uppercase mb-2">
+              Message {activeTab}
+            </h3>
+            <p className="text-gray-400 font-light text-sm">
+              Fill out the form below and we will connect with you via WhatsApp.
+            </p>
+          </div>
+
+          <form onSubmit={handleSubmit} className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <label htmlFor="name" className={labelStyles}>Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
+                  className={inputStyles}
+                  placeholder="e.g. John Doe"
+                />
+              </div>
+              <div>
+                <label htmlFor="phone" className={labelStyles}>Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className={inputStyles}
+                  placeholder="+91 00000 00000"
+                />
+              </div>
+            </div>
+
+            <div className="relative">
+              <label htmlFor="service" className={labelStyles}>Interested Service <span className="text-gray-500 lowercase tracking-normal">(Optional)</span></label>
+              <div className="relative">
+                <select
+                  id="service"
+                  name="service"
+                  value={formData.service}
+                  onChange={handleChange}
+                  className={`${inputStyles} appearance-none pr-12 cursor-pointer`}
+                >
+                  <option value="" className="bg-brand-blue text-gray-400">Select a service...</option>
+                  <option value="Aroma Therapy" className="bg-brand-blue text-white">Aroma Therapy</option>
+                  <option value="Swedish Massage" className="bg-brand-blue text-white">Swedish Massage</option>
+                  <option value="Deep Tissue Massage" className="bg-brand-blue text-white">Deep Tissue Massage</option>
+                  <option value="Balinese Massage" className="bg-brand-blue text-white">Balinese Massage</option>
+                  <option value="Other" className="bg-brand-blue text-white">Other</option>
+                </select>
+                <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-brand-gold/50">
+                  <ChevronDown size={20} strokeWidth={1.5} />
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="message" className={labelStyles}>Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
                 required
-                value={formData.name}
+                value={formData.message}
                 onChange={handleChange}
-                className="w-full bg-brand-bg border border-brand-blue-light rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-all font-light"
-                placeholder="John Doe"
+                className={`${inputStyles} resize-none`}
+                placeholder="How can we help you?"
               />
             </div>
-            <div className="space-y-2">
-              <label htmlFor="phone" className="text-sm tracking-widest uppercase text-brand-gold-dark font-medium">Phone Number</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                required
-                value={formData.phone}
-                onChange={handleChange}
-                className="w-full bg-brand-bg border border-brand-blue-light rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-all font-light"
-                placeholder="+91 XXXXX XXXXX"
-              />
+
+            <div className="pt-6 text-center">
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center bg-brand-gold text-brand-blue px-14 py-5 rounded-full text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-500 transform hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(212,175,55,0.2)] hover:bg-[#e6c143] w-full md:w-auto"
+              >
+                Send via WhatsApp
+              </button>
             </div>
-          </div>
-
-          <div className="space-y-2">
-            <label htmlFor="service" className="text-sm tracking-widest uppercase text-brand-gold-dark font-medium">Interested Service (Optional)</label>
-            <select
-              id="service"
-              name="service"
-              value={formData.service}
-              onChange={handleChange}
-              className="w-full bg-brand-bg border border-brand-blue-light rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-all font-light appearance-none"
-            >
-              <option value="">Select a service...</option>
-              <option value="Aroma Therapy">Aroma Therapy</option>
-              <option value="Swedish Massage">Swedish Massage</option>
-              <option value="Deep Tissue Massage">Deep Tissue Massage</option>
-              <option value="Balinese Massage">Balinese Massage</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-
-          <div className="space-y-2">
-            <label htmlFor="message" className="text-sm tracking-widest uppercase text-brand-gold-dark font-medium">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              rows={4}
-              required
-              value={formData.message}
-              onChange={handleChange}
-              className="w-full bg-brand-bg border border-brand-blue-light rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition-all font-light resize-none"
-              placeholder="Tell us how we can help you..."
-            />
-          </div>
-
-          <div className="pt-4 text-center">
-            <button
-              type="submit"
-              className="inline-flex items-center justify-center gap-3 px-12 py-4 rounded-full text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-300 transform hover:scale-105 hover:shadow-lg bg-brand-gold text-brand-blue hover:bg-brand-gold-light hover:shadow-brand-gold/20"
-            >
-              Send via WhatsApp
-            </button>
-          </div>
-        </motion.form>
+          </form>
+        </motion.div>
       </div>
     </SectionWrapper>
   );

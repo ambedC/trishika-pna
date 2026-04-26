@@ -1,7 +1,19 @@
+import { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
 import SectionWrapper from "@/components/SectionWrapper";
+
+export const metadata: Metadata = {
+  title: "Trishika Saloon & Wellness Spa",
+  description: "Experience pure tranquility and premium wellness treatments at Trishika Saloon & Wellness Spa located in Ernakulam.",
+  openGraph: {
+    title: "Trishika Saloon & Wellness Spa",
+    description: "Experience pure tranquility and premium wellness treatments at Trishika Saloon & Wellness Spa.",
+    images: ["/images/trishika.jpg"],
+  },
+};
 import ServiceCard from "@/components/ServiceCard";
 import CTAButton from "@/components/CTAButton";
+import Image from "next/image";
 
 const services = [
   { name: "Aroma Therapy", price: "3000", imageSrc: "/services/aroma.webp", description: "A gentle massage using essential oils to promote relaxation and relieve stress." },
@@ -14,6 +26,13 @@ const services = [
   { name: "Signature Massage", price: "6500", imageSrc: "/services/detox.webp", description: "Our exclusive, customized massage blending the best techniques for ultimate rejuvenation." },
 ];
 
+const galleryImages = [
+  "/trishika/img1.webp",
+  "/trishika/img2.webp",
+  "/trishika/img3.webp",
+  "/trishika/img4.webp",
+];
+
 export default function TrishikaPage() {
   return (
     <>
@@ -21,6 +40,7 @@ export default function TrishikaPage() {
         title="Trishika Saloon & Wellness Spa"
         subtitle="Experience pure tranquility and premium wellness treatments."
         backgroundImage="/images/trishika.jpg"
+        logoSrc="/trishika/logo.jpg"
       />
 
       <SectionWrapper id="about" className="text-center max-w-4xl">
@@ -53,7 +73,27 @@ export default function TrishikaPage() {
             />
           ))}
         </div>
+      </SectionWrapper>
 
+      <SectionWrapper id="gallery" className="!pt-0">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-serif font-light tracking-wide text-brand-gold mb-4">Gallery</h2>
+          <p className="text-gray-400 font-light text-lg">A glimpse into our serene sanctuary.</p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {galleryImages.map((img, i) => (
+            <div key={i} className="relative h-64 md:h-80 w-full rounded-2xl overflow-hidden group">
+              <Image 
+                src={img} 
+                alt={`Trishika Gallery ${i + 1}`} 
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-brand-bg/20 group-hover:bg-transparent transition-colors duration-500" />
+            </div>
+          ))}
+        </div>
         <div className="mt-20 text-center">
           <CTAButton href="/contact">Book an Appointment</CTAButton>
         </div>
