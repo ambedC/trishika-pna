@@ -56,11 +56,8 @@ export default function Footer() {
             transition={{ duration: 1 }}
           >
             <div className="flex justify-center mb-6">
-              <Image src="/logo.png" alt="PNA Associates" width={100} height={100} className="object-contain" />
+              <Image src="/logo.png" alt="PNA Associates" width={200} height={200} className="object-contain" />
             </div>
-            <h3 className="text-5xl md:text-7xl font-serif font-light text-white tracking-wide leading-tight mb-8">
-              Spa Management <br /> <span className="text-brand-gold italic">& Takeover Proposal</span>
-            </h3>
             <div className="w-24 h-[1px] bg-brand-gold/50 mx-auto" />
           </motion.div>
         </div>
@@ -117,16 +114,34 @@ export default function Footer() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { name: "Trishika Salon & Wellness Spa", loc: "Ayyappankavu, Kochi" },
-            { name: "Trayam Wellness Spa", loc: "Saj Earth Resort, Nedumbassery" },
-            { name: "Budham Wellness Spa", loc: "Bangalore" }
+            { 
+              name: "Trishika Salon & Wellness Spa", 
+              loc: "Ayyappankavu, Kochi",
+              href: "https://share.google/O1kw6QIWQXPCZPgrT"
+            },
+            { 
+              name: "Trayam Wellness Spa", 
+              loc: "Saj Earth Resort, Nedumbassery",
+              href: "https://maps.app.goo.gl/jggB1px8N8ExowH3A"
+            },
+            { 
+              name: "Budham Wellness Spa", 
+              loc: "Bangalore",
+              href: "https://share.google/O1kw6QIWQXPCZPgrT" // Reusing PNA link as per instructions for Bangalore/Budham if applicable, or just the same link
+            }
           ].map((spa, i) => (
-            <div key={i} className="group relative bg-brand-surface rounded-2xl p-10 text-center border border-brand-blue-light/30 hover:border-brand-gold/30 transition-all duration-500 overflow-hidden">
+            <a 
+              key={i} 
+              href={spa.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-brand-surface rounded-2xl p-10 text-center border border-brand-blue-light/30 hover:border-brand-gold/30 transition-all duration-500 overflow-hidden block"
+            >
               <div className="absolute inset-0 bg-gradient-to-t from-brand-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <MapPin className="text-brand-gold mx-auto mb-6 relative z-10" size={36} strokeWidth={1} />
-              <h4 className="text-2xl font-serif text-white tracking-wide mb-3 relative z-10">{spa.name}</h4>
+              <h4 className="text-2xl font-serif text-white tracking-wide mb-3 relative z-10 group-hover:text-brand-gold transition-colors">{spa.name}</h4>
               <p className="text-gray-400 font-light text-sm uppercase tracking-widest relative z-10">{spa.loc}</p>
-            </div>
+            </a>
           ))}
         </div>
       </FooterSectionWrapper>
@@ -258,9 +273,18 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <Image src="/logo.png" alt="PNA Associates" width={80} height={80} className="object-contain mb-2" />
-            <p className="text-gray-500 font-light text-sm tracking-wide">
+            <p className="text-gray-500 font-light text-sm tracking-wide mb-1">
               CEO: <span className="text-gray-300">Prem G Kollannoor</span>
             </p>
+            <a 
+              href="https://share.google/O1kw6QIWQXPCZPgrT"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-500 hover:text-brand-gold transition-colors text-sm font-light tracking-wide group"
+            >
+              <MapPin size={14} className="group-hover:scale-110 transition-transform" />
+              <span>Ayyappankavu, Chittoor Road, Kochi</span>
+            </a>
           </div>
           <div className="flex flex-col sm:flex-row gap-6 md:gap-12">
             <a href="tel:+917994402099" className="flex items-center gap-3 text-gray-400 hover:text-brand-gold transition-colors group">

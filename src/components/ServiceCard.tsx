@@ -8,12 +8,11 @@ interface ServiceCardProps {
   name: string;
   description?: string;
   benefits?: string;
-  price: string | number;
   duration?: string;
   imageSrc?: string;
 }
 
-export default function ServiceCard({ name, description, benefits, price, duration, imageSrc }: ServiceCardProps) {
+export default function ServiceCard({ name, description, benefits, duration, imageSrc }: ServiceCardProps) {
   return (
     <motion.div
       whileHover={{ y: -8 }}
@@ -38,14 +37,11 @@ export default function ServiceCard({ name, description, benefits, price, durati
 
       {/* Content Container */}
       <div className="p-8 flex flex-col flex-1">
-        <div className="flex justify-between items-start mb-4">
-          <h3 className="text-2xl font-serif font-light tracking-wide text-brand-gold group-hover:text-brand-gold-light transition-colors pr-2">
+        <div className="mb-4">
+          <h3 className="text-2xl font-serif font-light tracking-wide text-brand-gold group-hover:text-brand-gold-light transition-colors">
             {name}
           </h3>
-          <div className="text-right shrink-0">
-            <span className="text-xl font-light text-white block">₹{price}</span>
-            {duration && <span className="text-xs tracking-wider uppercase text-gray-400 mt-1 block">{duration}</span>}
-          </div>
+          {duration && <span className="text-xs tracking-wider uppercase text-gray-400 mt-2 block">{duration}</span>}
         </div>
         
         {description && (

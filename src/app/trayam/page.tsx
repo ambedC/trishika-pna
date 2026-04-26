@@ -15,14 +15,17 @@ import ServiceCard from "@/components/ServiceCard";
 import CTAButton from "@/components/CTAButton";
 
 const services = [
-  { name: "Aroma Therapy", price: "2500", duration: "40 min", imageSrc: "/services/aroma.webp", description: "A gentle massage using essential oils to promote relaxation and relieve stress." },
-  { name: "Swedish Massage", price: "2500", imageSrc: "/services/swedish.webp", description: "Classic massage technique using long strokes to ease tension and improve circulation." },
-  { name: "Balinese Massage", price: "3000", imageSrc: "/services/balinese.webp", description: "A full-body, deep-tissue, holistic treatment." },
-  { name: "Deep Tissue Massage", price: "3000", imageSrc: "/services/deep.webp", description: "Focuses on the deepest layers of muscle tissue to release chronic muscle tension." },
-  { name: "Candle Massage", price: "3500", imageSrc: "/services/candle.webp", description: "A warm and soothing massage using melted, skin-safe massage candles." },
-  { name: "Wine Massage", price: "5000", imageSrc: "/services/wine.webp", description: "A luxurious therapy using antioxidant-rich wine to rejuvenate the skin." },
-  { name: "Honey Massage", price: "4500", imageSrc: "/services/honey.webp", description: "A detoxifying massage using warm honey to deeply cleanse and nourish." },
-  { name: "Steam Bath", price: "500", imageSrc: "/services/steam.webp", description: "Relaxing steam session to open pores and detoxify the body." },
+  { name: "Hot Oil Massage", imageSrc: "/services/hotoil.png", description: "A therapeutic treatment using warm, nutrient-rich oils to deeply nourish the skin and relax the muscles." },
+  { name: "Ayurvedic Massage", imageSrc: "/services/ayurvedic.webp", description: "Ancient Indian therapy restoring balance through warm herbal oils and rhythmic massage techniques." },
+  { name: "Steam Bath", imageSrc: "/services/steam.webp", description: "Relaxing steam session to open pores and detoxify the body." },
+  { name: "Honey Massage", imageSrc: "/services/honey.webp", description: "A detoxifying massage using warm honey to deeply cleanse and nourish." },
+  { name: "Wine Massage", imageSrc: "/services/wine.webp", description: "A luxurious therapy using antioxidant-rich wine to rejuvenate the skin." },
+  { name: "Candle Massage", imageSrc: "/services/candle.webp", description: "A warm and soothing massage using melted, skin-safe massage candles." },
+  { name: "Deep Tissue Massage", imageSrc: "/services/deep.webp", description: "Focuses on the deepest layers of muscle tissue to release chronic muscle tension." },
+  { name: "Balinese Massage", imageSrc: "/services/balinese.webp", description: "A full-body, deep-tissue, holistic treatment." },
+  { name: "Swedish Massage", imageSrc: "/services/swedish.webp", description: "Classic massage technique using long strokes to ease tension and improve circulation." },
+  { name: "Aroma Therapy", duration: "40 min", imageSrc: "/services/aroma.webp", description: "A gentle massage using essential oils to promote relaxation and relieve stress." },
+  { name: "Hair Cut", imageSrc: "/services/haircut.png", description: "Professional styling and precision cuts tailored to your unique look in a luxury setting." },
 ];
 
 export default function TrayamPage() {
@@ -41,10 +44,15 @@ export default function TrayamPage() {
         <p className="text-gray-300 text-lg md:text-xl font-light leading-relaxed mb-8">
           Nestled within the Saj Earth Resort, Trayam Wellness Spa offers an exclusive sanctuary for those seeking profound relaxation. Our therapies blend traditional wisdom with modern luxury to deliver an unforgettable wellness journey.
         </p>
-        <div className="inline-flex items-center gap-3 bg-brand-surface border border-brand-blue-light rounded-full px-8 py-4 shadow-lg shadow-brand-blue-light/20">
+        <a 
+          href="https://maps.app.goo.gl/jggB1px8N8ExowH3A" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 bg-brand-surface border border-brand-blue-light rounded-full px-8 py-4 shadow-lg shadow-brand-blue-light/20 hover:border-brand-gold/50 transition-all duration-300 group"
+        >
           <span className="text-brand-gold font-medium tracking-widest uppercase text-sm">Location:</span>
-          <span className="text-gray-200 font-light tracking-wide">Saj Earth Resort, Nedumbasherry</span>
-        </div>
+          <span className="text-gray-200 font-light tracking-wide group-hover:text-brand-gold transition-colors">Saj Earth Resort, Nedumbasherry</span>
+        </a>
       </SectionWrapper>
 
       <SectionWrapper id="services" className="bg-brand-surface/30">
@@ -60,7 +68,6 @@ export default function TrayamPage() {
             <ServiceCard 
               key={index}
               name={service.name}
-              price={service.price}
               duration={service.duration}
               description={service.description}
               imageSrc={service.imageSrc}
