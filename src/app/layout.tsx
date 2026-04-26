@@ -3,6 +3,7 @@ import { Outfit, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -18,8 +19,8 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL("https://pnaassociates.com"),
   title: {
-    default: "PNA Associates | Premium Spa & Wellness",
-    template: "%s | PNA Associates"
+    default: "Trishika | Premium Spa & Wellness",
+    template: "%s | Trishika"
   },
   description: "Trishika Saloon & Wellness Spa and Trayam Wellness Spa. Premium wellness spa offering massage therapies, body treatments, and relaxation experiences.",
   keywords: ["Spa", "Wellness", "Massage Therapy", "Body Treatments", "PNA Associates", "Trishika", "Trayam"],
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     apple: "/trishika/logo.jpg",
   },
   openGraph: {
-    title: "PNA Associates | Premium Spa & Wellness",
+    title: "Trishika | Premium Spa & Wellness",
     description: "Premium wellness spa offering massage therapies, body treatments, and relaxation experiences.",
     url: "https://pnaassociates.com",
     siteName: "PNA Associates",
@@ -56,6 +57,7 @@ export default function RootLayout({
       className={`${outfit.variable} ${cormorant.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-brand-bg text-gray-200">
+        <SmoothScroll />
         <Navbar />
         <main className="flex-1">
           {children}

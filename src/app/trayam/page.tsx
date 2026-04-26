@@ -33,6 +33,7 @@ export default function TrayamPage() {
         subtitle="Your serene escape within the luxurious Saj Earth Resort."
         backgroundImage="/images/trayam.jpg"
         logoSrc="/trayam/logo.png"
+        brochureSrc="/trayam/brochure.pdf"
       />
 
       <SectionWrapper id="about" className="text-center max-w-4xl">

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Download } from "lucide-react";
 import CTAButton from "./CTAButton";
 
 interface HeroSectionProps {
@@ -11,6 +12,7 @@ interface HeroSectionProps {
   ctaLink?: string;
   backgroundImage?: string;
   logoSrc?: string;
+  brochureSrc?: string;
   children?: React.ReactNode;
 }
 
@@ -21,6 +23,7 @@ export default function HeroSection({
   ctaLink,
   backgroundImage = "/images/hero-bg.jpg",
   logoSrc,
+  brochureSrc,
   children,
 }: HeroSectionProps) {
   return (
@@ -67,9 +70,21 @@ export default function HeroSection({
               </p>
             )}
 
-            {ctaText && ctaLink && (
-              <div className="pt-10">
-                <CTAButton href={ctaLink}>{ctaText}</CTAButton>
+            {(ctaText || brochureSrc) && (
+              <div className="pt-10 flex flex-col sm:flex-row items-center gap-4">
+                {ctaText && ctaLink && (
+                  <CTAButton href={ctaLink}>{ctaText}</CTAButton>
+                )}
+                {brochureSrc && (
+                  <a
+                    href={brochureSrc}
+                    download
+                    className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-300 transform hover:scale-105 border-2 border-brand-gold text-brand-gold hover:bg-brand-gold/10 hover:shadow-lg hover:shadow-brand-gold/10"
+                  >
+                    <Download size={16} />
+                    Download Brochure
+                  </a>
+                )}
               </div>
             )}
           </motion.div>

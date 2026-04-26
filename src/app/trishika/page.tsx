@@ -41,6 +41,7 @@ export default function TrishikaPage() {
         subtitle="Experience pure tranquility and premium wellness treatments."
         backgroundImage="/images/trishika.jpg"
         logoSrc="/trishika/logo.jpg"
+        brochureSrc="/trishika/brochure.pdf"
       />
 
       <SectionWrapper id="about" className="text-center max-w-4xl">
