@@ -5,12 +5,26 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 
+import MapSection from "./MapSection";
+
 type ContactTarget = "Trishika" | "Trayam" | "PNA Associates";
 
-const CONTACT_NUMBERS: Record<ContactTarget, string> = {
-  "Trishika": "917994402099",
-  "Trayam": "917994404099",
-  "PNA Associates": "917994402099",
+const CONTACT_INFO: Record<ContactTarget, { number: string, address: string, mapUrl: string }> = {
+  "Trishika": {
+    number: "917994402099",
+    address: "Ayyappankavu, Chittoor Road, Ernakulam",
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.2563563912254!2d76.280687!3d9.9956705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d0867f35071%3A0x285f680682fdd336!2sTrishika%20saloon%20and%20wellness%20spa!5e0!3m2!1sen!2sin!4v1777208347475!5m2!1sen!2sin"
+  },
+  "Trayam": {
+    number: "917994404099",
+    address: "Saj Earth Resort, Nedumbasherry, Kochi",
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.225711594769!2d76.3850071!3d10.162299899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b086d7f1af955d7%3A0xd6522eec2e3fa7a2!2sSAJ%20Earth%20Resort%20%26%20Convention%20Center!5e0!3m2!1sen!2sin!4v1777208296396!5m2!1sen!2sin"
+  },
+  "PNA Associates": {
+    number: "917994402099",
+    address: "Ayyappankavu, Chittoor Road, Kochi",
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.2563563912254!2d76.280687!3d9.9956705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d0867f35071%3A0x285f680682fdd336!2sTrishika%20saloon%20and%20wellness%20spa!5e0!3m2!1sen!2sin!4v1777208347475!5m2!1sen!2sin"
+  },
 };
 
 export default function ContactSection() {
@@ -29,7 +43,7 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    const number = CONTACT_NUMBERS[activeTab];
+    const number = CONTACT_INFO[activeTab].number;
     const text = `Hi, I would like to contact ${activeTab}.\n\nName: ${formData.name}\nPhone: ${formData.phone}\nService: ${formData.service || "N/A"}\nMessage: ${formData.message}`;
     const encodedText = encodeURIComponent(text);
     
@@ -155,6 +169,18 @@ export default function ContactSection() {
               </button>
             </div>
           </form>
+
+          {/* Location Info & Map */}
+          <div className="mt-16 pt-16 border-t border-white/5 text-center">
+            <h4 className="text-brand-gold font-serif tracking-widest uppercase mb-4">Location</h4>
+            <p className="text-gray-300 font-light text-lg mb-8 italic">
+              {CONTACT_INFO[activeTab].address}
+            </p>
+            <MapSection 
+              embedUrl={CONTACT_INFO[activeTab].mapUrl}
+              title={`${activeTab} Location Map`}
+            />
+          </div>
         </motion.div>
       </div>
     </SectionWrapper>
