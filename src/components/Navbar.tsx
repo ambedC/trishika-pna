@@ -58,9 +58,9 @@ export default function Navbar() {
             <Image 
               src={logoSrc} 
               alt={altText} 
-              width={48} 
-              height={48} 
-              className="object-contain rounded-full shadow-md bg-brand-bg/50 backdrop-blur-md p-1 border border-brand-gold/20" 
+              width={72} 
+              height={72} 
+              className="object-contain rounded-full shadow-md bg-brand-bg/50 backdrop-blur-md p-1 border border-brand-gold/20 w-16 h-16 md:w-[72px] md:h-[72px]" 
             />
           </Link>
 
