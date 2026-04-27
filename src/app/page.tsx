@@ -16,13 +16,19 @@ export default function Home() {
         title="Trishika Saloon & Wellness Spa"
         description="Premium wellness spa offering massage therapies, body treatments, and relaxation experiences designed to rejuvenate your mind and body."
         services={[
+          "Nuru Massage",
+          "Moroccan Bath",
+          "Hot Stone Therapy",
+          "Candle Massage",
+          "Lomi Lomi",
+          "Ayurvedic Massage",
+          "Body Scrub + Steam Bath",
+          "Balinese Massage",
+          "Deep Tissue Massage",
           "Aroma Therapy",
           "Swedish Massage",
-          "Deep Tissue Massage",
-          "Balinese Massage",
           "Body Scrub",
-          "Candle Massage",
-          "Moroccan Bath"
+          "Steam Bath"
         ]}
         ctaText="See More"
         ctaLink="/trishika"
@@ -34,13 +40,17 @@ export default function Home() {
         location="Saj Earth Resort, Nedumbasherry"
         description="Experience the ultimate relaxation oasis located within the luxurious Saj Earth Resort. Discover a world of calm with our exclusive therapies."
         services={[
-          "Aroma Therapy",
-          "Swedish Massage",
+          "Hot Oil Massage",
+          "Ayurvedic Massage",
+          "Steam Bath",
+          "Honey Massage",
+          "Wine Massage",
+          "Candle Massage",
           "Deep Tissue Massage",
           "Balinese Massage",
-          "Wine Massage",
-          "Honey Massage",
-          "Steam Bath"
+          "Swedish Massage",
+          "Aroma Therapy",
+          "Hair Cut"
         ]}
         ctaText="See More"
         ctaLink="/trayam"
