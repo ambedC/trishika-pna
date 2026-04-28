@@ -15,6 +15,7 @@ import ServiceCard from "@/components/ServiceCard";
 import CTAButton from "@/components/CTAButton";
 import MapSection from "@/components/MapSection";
 import { MapPin, Phone } from "lucide-react";
+import { FacebookIcon, InstagramIcon } from "@/components/icons/SocialIcons";
 
 const services = [
   { name: "Hot Oil Massage", imageSrc: "/services/hotoil.png", description: "A therapeutic treatment using warm, nutrient-rich oils to deeply nourish the skin and relax the muscles." },
@@ -67,6 +68,25 @@ export default function TrayamPage() {
               <Phone size={20} className="text-brand-gold flex-shrink-0 group-hover:scale-110 transition-transform" />
               <span className="font-light tracking-widest text-sm sm:text-base">+91 79944 02099</span>
             </a>
+
+            <div className="flex items-center gap-4">
+              <a 
+                href="https://www.instagram.com/trayamwellnessspa" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-brand-surface border border-brand-blue-light rounded-full p-4 shadow-lg shadow-brand-blue-light/20 hover:border-brand-gold/50 text-gray-300 hover:text-brand-gold transition-all duration-300"
+              >
+                <InstagramIcon size={20} />
+              </a>
+              <a 
+                href="https://www.facebook.com/people/Trayam-Welness-Spa/pfbid02Q1kyoAQ2ti2gKoLE9xFtajwsFfDknzgA7dn5zDcet23tsPT3rHNa6LdYaKbYUQ1ml/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-brand-surface border border-brand-blue-light rounded-full p-4 shadow-lg shadow-brand-blue-light/20 hover:border-brand-gold/50 text-gray-300 hover:text-brand-gold transition-all duration-300"
+              >
+                <FacebookIcon size={20} />
+              </a>
+            </div>
           </div>
 
           <MapSection 
