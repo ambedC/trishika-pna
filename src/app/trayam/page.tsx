@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 import ServiceCard from "@/components/ServiceCard";
 import CTAButton from "@/components/CTAButton";
 import MapSection from "@/components/MapSection";
+import { MapPin, Phone } from "lucide-react";
 
 const services = [
   { name: "Hot Oil Massage", imageSrc: "/services/hotoil.png", description: "A therapeutic treatment using warm, nutrient-rich oils to deeply nourish the skin and relax the muscles." },
@@ -46,15 +47,27 @@ export default function TrayamPage() {
           Nestled within the Saj Earth Resort, Trayam Wellness Spa offers an exclusive sanctuary for those seeking profound relaxation. Our therapies blend traditional wisdom with modern luxury to deliver an unforgettable wellness journey.
         </p>
         <div className="flex flex-col items-center gap-8">
-          <a 
-            href="https://maps.app.goo.gl/jggB1px8N8ExowH3A" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-brand-surface border border-brand-blue-light rounded-full px-8 py-4 shadow-lg shadow-brand-blue-light/20 hover:border-brand-gold/50 transition-all duration-300 group"
-          >
-            <span className="text-brand-gold font-medium tracking-widest uppercase text-sm">Location:</span>
-            <span className="text-gray-200 font-light tracking-wide group-hover:text-brand-gold transition-colors">Saj Earth Resort, Nedumbasherry</span>
-          </a>
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4">
+            <a 
+              href="https://maps.app.goo.gl/jggB1px8N8ExowH3A" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-brand-surface border border-brand-blue-light rounded-full px-6 py-4 shadow-lg shadow-brand-blue-light/20 hover:border-brand-gold/50 transition-all duration-300 group"
+            >
+              <MapPin size={20} className="text-brand-gold flex-shrink-0" />
+              <span className="text-gray-200 font-light tracking-wide group-hover:text-brand-gold transition-colors text-sm sm:text-base">Saj Earth Resort, Nedumbasherry</span>
+            </a>
+            
+            <a href="tel:+917994808001" className="inline-flex items-center gap-3 bg-brand-surface border border-brand-blue-light rounded-full px-6 py-4 shadow-lg shadow-brand-blue-light/20 hover:border-brand-gold/50 transition-all duration-300 group text-gray-200 hover:text-brand-gold">
+              <Phone size={20} className="text-brand-gold flex-shrink-0 group-hover:scale-110 transition-transform" />
+              <span className="font-light tracking-widest text-sm sm:text-base">+91 79948 08001</span>
+            </a>
+            
+            <a href="tel:+917994402099" className="inline-flex items-center gap-3 bg-brand-surface border border-brand-blue-light rounded-full px-6 py-4 shadow-lg shadow-brand-blue-light/20 hover:border-brand-gold/50 transition-all duration-300 group text-gray-200 hover:text-brand-gold">
+              <Phone size={20} className="text-brand-gold flex-shrink-0 group-hover:scale-110 transition-transform" />
+              <span className="font-light tracking-widest text-sm sm:text-base">+91 79944 02099</span>
+            </a>
+          </div>
 
           <MapSection 
             embedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.225711594769!2d76.3850071!3d10.162299899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b086d7f1af955d7%3A0xd6522eec2e3fa7a2!2sSAJ%20Earth%20Resort%20%26%20Convention%20Center!5e0!3m2!1sen!2sin!4v1777208296396!5m2!1sen!2sin"

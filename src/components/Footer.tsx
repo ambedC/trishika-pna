@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { CheckCircle2, MapPin, Phone, Mail, Award, ShieldCheck, Sparkles, UserCheck, Settings, Users } from "lucide-react";
+import { FacebookIcon, InstagramIcon } from "@/components/icons/SocialIcons";
+import { usePathname } from "next/navigation";
 import CTAButton from "./CTAButton";
 
 // --- Subcomponents ---
@@ -34,6 +36,9 @@ const FooterCard = ({ title, icon, description }: { title: string, icon: React.R
 // --- Main Footer Component ---
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isTrishika = pathname === "/trishika" || pathname === "/";
+
   return (
     <footer className="bg-brand-bg relative overflow-hidden mt-20">
       
@@ -202,7 +207,7 @@ export default function Footer() {
               Massage Therapies
             </h4>
             <ul className="space-y-4">
-              {["Aroma Therapy", "Swedish Massage", "Deep Tissue", "Balinese Massage", "Hot Stone Therapy", "Candle Massage", "Ayurvedic Massage"].map((service, i) => (
+              {["Aroma Therapy", "Swedish Massage", "Deep Tissue", "Balinese Massage", "Hot Stone Therapy", "Candle Massage", "Ayurvedic Massage"].slice().reverse().map((service, i) => (
                 <li key={i} className="flex items-center gap-3 text-gray-300 font-light tracking-wide">
                   <Sparkles size={14} className="text-brand-gold" />
                   {service}
@@ -299,7 +304,17 @@ export default function Footer() {
         </div>
         <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600 tracking-wider">
           <p>&copy; {new Date().getFullYear()} PNA Associates. All rights reserved.</p>
-          <div className="flex gap-6">
+          <div className="flex gap-6 items-center">
+            {isTrishika && (
+               <div className="flex items-center gap-4 border-r border-gray-800 pr-6 mr-2">
+                 <a href="https://www.instagram.com/trishika_saloon_wellness_spa" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors flex items-center gap-2">
+                   <InstagramIcon size={16} /> <span className="hidden sm:inline">Instagram</span>
+                 </a>
+                 <a href="https://www.facebook.com/people/Trishika-Saloon-Wellness-Spa/61586235514968/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors flex items-center gap-2">
+                   <FacebookIcon size={16} /> <span className="hidden sm:inline">Facebook</span>
+                 </a>
+               </div>
+            )}
             <Link href="#" className="hover:text-brand-gold transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-brand-gold transition-colors">Terms of Service</Link>
           </div>

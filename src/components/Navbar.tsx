@@ -60,7 +60,7 @@ export default function Navbar() {
               alt={altText} 
               width={72} 
               height={72} 
-              className="object-contain rounded-full shadow-md bg-brand-bg/50 backdrop-blur-md p-1 border border-brand-gold/20 w-16 h-16 md:w-[72px] md:h-[72px]" 
+              className="object-contain rounded-full shadow-md bg-brand-bg/50 backdrop-blur-md p-1 border border-brand-gold/20 w-16 h-16 md:w-[96px] md:h-[96px]" 
             />
           </Link>
 

@@ -10,6 +10,7 @@ export default function Home() {
         ctaText="Explore Trishika"
         ctaLink="/trishika"
         backgroundImage="/images/hero-bg.jpg"
+        logoSrc="/trishika/logo.jpg"
       />
 
       <ServicePreview
