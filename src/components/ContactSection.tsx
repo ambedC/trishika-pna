@@ -11,17 +11,17 @@ type ContactTarget = "Trishika" | "Trayam" | "PNA Associates";
 
 const CONTACT_INFO: Record<ContactTarget, { number: string, address: string, mapUrl: string }> = {
   "Trishika": {
-    number: "917994402099",
+    number: "917994408099",
     address: "Ayyappankavu, Chittoor Road, Ernakulam",
     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.2563563912254!2d76.280687!3d9.9956705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d0867f35071%3A0x285f680682fdd336!2sTrishika%20saloon%20and%20wellness%20spa!5e0!3m2!1sen!2sin!4v1777208347475!5m2!1sen!2sin"
   },
   "Trayam": {
-    number: "917994404099",
+    number: "917994808001",
     address: "Saj Earth Resort, Nedumbasherry, Kochi",
     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.225711594769!2d76.3850071!3d10.162299899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b086d7f1af955d7%3A0xd6522eec2e3fa7a2!2sSAJ%20Earth%20Resort%20%26%20Convention%20Center!5e0!3m2!1sen!2sin!4v1777208296396!5m2!1sen!2sin"
   },
   "PNA Associates": {
-    number: "917994402099",
+    number: "917994404099",
     address: "Ayyappankavu, Chittoor Road, Kochi",
     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.2563563912254!2d76.280687!3d9.9956705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d0867f35071%3A0x285f680682fdd336!2sTrishika%20saloon%20and%20wellness%20spa!5e0!3m2!1sen!2sin!4v1777208347475!5m2!1sen!2sin"
   },
