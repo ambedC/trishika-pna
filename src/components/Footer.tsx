@@ -38,6 +38,7 @@ const FooterCard = ({ title, icon, description }: { title: string, icon: React.R
 export default function Footer() {
   const pathname = usePathname();
   const isTrishika = pathname === "/trishika" || pathname === "/";
+  const isTrayam = pathname === "/trayam";
 
   return (
     <footer className="bg-brand-bg relative overflow-hidden mt-20">
@@ -311,6 +312,16 @@ export default function Footer() {
                    <InstagramIcon size={16} /> <span className="hidden sm:inline">Instagram</span>
                  </a>
                  <a href="https://www.facebook.com/people/Trishika-Saloon-Wellness-Spa/61586235514968/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors flex items-center gap-2">
+                   <FacebookIcon size={16} /> <span className="hidden sm:inline">Facebook</span>
+                 </a>
+               </div>
+            )}
+            {isTrayam && (
+               <div className="flex items-center gap-4 border-r border-gray-800 pr-6 mr-2">
+                 <a href="https://www.instagram.com/trayamwellnessspa" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors flex items-center gap-2">
+                   <InstagramIcon size={16} /> <span className="hidden sm:inline">Instagram</span>
+                 </a>
+                 <a href="https://www.facebook.com/people/Trayam-Welness-Spa/pfbid02Q1kyoAQ2ti2gKoLE9xFtajwsFfDknzgA7dn5zDcet23tsPT3rHNa6LdYaKbYUQ1ml/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors flex items-center gap-2">
                    <FacebookIcon size={16} /> <span className="hidden sm:inline">Facebook</span>
                  </a>
                </div>
