@@ -3,12 +3,16 @@ import HeroSection from "@/components/HeroSection";
 import SectionWrapper from "@/components/SectionWrapper";
 
 export const metadata: Metadata = {
-  title: "Trayam Wellness Spa",
-  description: "Your serene escape within the luxurious Saj Earth Resort. Discover a world of calm with our exclusive therapies.",
+  title: "Trayam Wellness Spa | Premium Spa at Saj Earth Resort",
+  description: "Your serene escape within the luxurious Saj Earth Resort, Nedumbasherry. Discover a world of calm with our exclusive therapies including Ayurvedic and Hot Oil massages.",
+  alternates: {
+    canonical: "https://www.trishikasaloonandwellnessspa.com/trayam",
+  },
   openGraph: {
-    title: "Trayam Wellness Spa",
+    title: "Trayam Wellness Spa | Premium Spa at Saj Earth Resort",
     description: "Your serene escape within the luxurious Saj Earth Resort. Discover a world of calm with our exclusive therapies.",
     images: ["/images/trayam.jpg"],
+    url: "https://www.trishikasaloonandwellnessspa.com/trayam",
   },
 };
 import ServiceCard from "@/components/ServiceCard";

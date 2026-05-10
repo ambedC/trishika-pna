@@ -10,12 +10,16 @@ import { FacebookIcon, InstagramIcon } from "@/components/icons/SocialIcons";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Trishika Saloon & Wellness Spa",
-  description: "Experience pure tranquility and premium wellness treatments at Trishika Saloon & Wellness Spa located in Ernakulam.",
+  title: "Trishika Saloon & Wellness Spa | Luxury Spa in Ernakulam",
+  description: "Experience pure tranquility and premium wellness treatments at Trishika Saloon & Wellness Spa located in Ernakulam. Offering Moroccan bath, Nuru massage, and more.",
+  alternates: {
+    canonical: "https://www.trishikasaloonandwellnessspa.com/trishika",
+  },
   openGraph: {
-    title: "Trishika Saloon & Wellness Spa",
+    title: "Trishika Saloon & Wellness Spa | Luxury Spa in Ernakulam",
     description: "Experience pure tranquility and premium wellness treatments at Trishika Saloon & Wellness Spa.",
     images: ["/images/trishika.jpg"],
+    url: "https://www.trishikasaloonandwellnessspa.com/trishika",
   },
 };
 

@@ -19,18 +19,33 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.trishikasaloonandwellnessspa.com/"),
   title: {
-    default: "Trishika | Premium Spa & Wellness",
-    template: "%s | Trishika"
+    default: "Trishika | Premium Saloon & Wellness Spa Ernakulam",
+    template: "%s | Trishika Saloon & Wellness Spa"
   },
-  description: "Trishika Saloon & Wellness Spa and Trayam Wellness Spa. Premium wellness spa offering massage therapies, body treatments, and relaxation experiences.",
-  keywords: ["Spa", "Wellness", "Massage Therapy", "Body Treatments", "PNA Associates", "Trishika", "Trayam"],
+  description: "Experience luxury at Trishika Saloon & Wellness Spa and Trayam Wellness Spa. Premium wellness spa in Ernakulam offering massage therapies, Moroccan bath, and body treatments.",
+  keywords: [
+    "Spa Ernakulam", 
+    "Wellness Spa Kochi", 
+    "Massage Therapy Ernakulam", 
+    "Body Treatments Kochi", 
+    "Trishika Spa", 
+    "Trayam Wellness Spa",
+    "Nuru Massage Kochi",
+    "Moroccan Bath Ernakulam",
+    "Ayurvedic Massage Kochi",
+    "Best Spa in Ernakulam"
+  ],
+  authors: [{ name: "Trishika Saloon & Wellness Spa" }],
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/images/trishika/logo.jpg",
     apple: "/images/trishika/logo.jpg",
   },
   openGraph: {
-    title: "Trishika | Premium Spa & Wellness",
-    description: "Premium wellness spa offering massage therapies, body treatments, and relaxation experiences.",
+    title: "Trishika | Premium Saloon & Wellness Spa Ernakulam",
+    description: "Premium wellness spa offering massage therapies, body treatments, and relaxation experiences in Ernakulam and Nedumbasherry.",
     url: "https://www.trishikasaloonandwellnessspa.com/",
     siteName: "Trishika Saloon & Wellness Spa",
     images: [
@@ -43,6 +58,12 @@ export const metadata: Metadata = {
     ],
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Trishika | Premium Saloon & Wellness Spa Ernakulam",
+    description: "Experience luxury wellness treatments at Trishika Saloon & Wellness Spa.",
+    images: ["/images/trishika/logo.jpg"],
   },
 };
 

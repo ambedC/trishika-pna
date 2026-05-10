@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://pnaassociates.com/sitemap.xml',
+    sitemap: 'https://www.trishikasaloonandwellnessspa.com/sitemap.xml',
   };
 }

@@ -2,8 +2,11 @@ import { Metadata } from "next";
 import ContactSection from "@/components/ContactSection";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description: "Get in touch with PNA Associates. Book an appointment at Trishika Saloon & Wellness Spa or Trayam Wellness Spa.",
+  title: "Contact Us | Book Your Spa Appointment",
+  description: "Get in touch with Trishika Saloon & Wellness Spa or Trayam Wellness Spa. Book an appointment for premium massage therapy and body treatments in Ernakulam.",
+  alternates: {
+    canonical: "https://www.trishikasaloonandwellnessspa.com/contact",
+  },
 };
 
 export default function ContactPage() {
